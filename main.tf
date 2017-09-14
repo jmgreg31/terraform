@@ -7,6 +7,7 @@ resource "aws_instance" "test"{
   instance_type = "t2.micro"
   user_data = "${data.template_file.init.rendered}"
   key_name = "jmgreg31"
+  iam_instance_profile = "jmgreg31-access"
   tags {
     Name = "Splunk_jmgreg31"
   }
